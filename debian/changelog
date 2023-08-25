@@ -1,5 +1,270 @@
-template-repository (1.0-1) unstable; urgency=medium
+dot2tex (2.11.3-3) unstable; urgency=medium
 
-  * Initial release
+  [ Debian Janitor ]
+  * Trim trailing whitespace.
+  * Bump debhelper from deprecated 9 to 12.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+  * Update standards version to 4.5.0, no changes needed.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+  [ Ondřej Nový ]
+  * d/control: Update Vcs-* fields with new Debian Python Team Salsa
+    layout.
+
+  [ Sandro Tosi ]
+  * Use the new Debian Python Team contact name and address
+
+ -- Sandro Tosi <morph@debian.org>  Tue, 14 Sep 2021 23:28:48 -0400
+
+dot2tex (2.11.3-2) unstable; urgency=medium
+
+  * debian/control
+    - b-d-i on python3-pyparsing
+
+ -- Sandro Tosi <morph@debian.org>  Sat, 18 Jan 2020 17:43:15 -0500
+
+dot2tex (2.11.3-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Use debhelper-compat instead of debian/compat.
+  * Bump Standards-Version to 4.4.1.
+  * d/control: Remove trailing whitespaces.
+
+  [ Sandro Tosi ]
+  * New upstream release; Closes: #933310
+  * debian/copyright
+    - update upstream copyright notice
+  * Switch to python3; Closes: #936440
+
+ -- Sandro Tosi <morph@debian.org>  Thu, 19 Dec 2019 14:36:49 -0500
+
+dot2tex (2.9.0-3) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/copyright: Use https protocol in Format field
+  * d/watch: Use https protocol
+
+  [ Sandro Tosi ]
+  * debian/patches/sphinx-1.8-gh-63.patch
+    - fix FTBFS with sphinx 1.8 by removing pngmath extension; Closes: #918814
+  * debian/control
+    - bump Standards-Version to 4.3.0 (no changes needed)
+  * debian/copyright
+    - extend packaging copyright years
+
+ -- Sandro Tosi <morph@debian.org>  Mon, 28 Jan 2019 22:39:29 -0500
+
+dot2tex (2.9.0-2.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Update the Recommends from pgf to texlive-pictures.
+    (Closes: #867070)
+
+ -- Adrian Bunk <bunk@debian.org>  Mon, 31 Jul 2017 11:39:38 +0300
+
+dot2tex (2.9.0-2) unstable; urgency=medium
+
+  * upload to unstable
+
+ -- Sandro Tosi <morph@debian.org>  Sat, 15 Aug 2015 19:52:46 +0100
+
+dot2tex (2.9.0-1) experimental; urgency=low
+
+  [ Jakub Wilk ]
+  * Use canonical URIs for Vcs-* fields.
+  * Remove DM-Upload-Allowed; it's no longer used by the archive
+    software.
+
+  [ Sandro Tosi ]
+  * New upstream release; Closes: #748767
+  * Acknowledge NMU; thanks Julien; Closes: #725066
+  * debian/control
+    - adopt package; Closes: #739877
+    - use X-P-V instead of the obsolete d/pyversions
+    - bump Standards-Version to 3.9.6 (no changes needed)
+    - update Homepage field
+  * debian/{control, rules}
+    - switch from cdbs to dh sequencer
+    - switch from python-support to dh_python2
+  * debian/pycompat
+    - removed, obsolete
+  * debian/{compat, control}
+    - bump dh compat level to 9
+  * debian/source/format
+    - switch to 3.0 (quilt) source format
+  * debian/watch
+    - use PyPI redirector
+  * debian/copyright
+    - switch to DEP-5 format
+    - update upstream copyright years
+  * debian/rules
+    - repack no longer needed
+    - install the right upstream changelog file
+  * debian/{control, doc-base, docs, rules}
+    - build and install sphinx documentation
+  * debian/{examples, rules}
+    - install examples in d/rules
+
+ -- Sandro Tosi <morph@debian.org>  Wed, 25 Feb 2015 20:08:42 +0000
+
+dot2tex (2.8.7+repack-1.1) unstable; urgency=high
+
+  * Non-maintainer upload.
+  * Fix ImportError in dotparsing.py (closes: #725066)
+
+ -- Julien Cristau <jcristau@debian.org>  Thu, 06 Feb 2014 16:52:31 +0100
+
+dot2tex (2.8.7+repack-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/control: new Standards-Version
+  * debian/rules: introduced a get-orig-source rule to repack the
+    tarball because of bad permissions
+  * debian/doc-base: added
+  * debian/copyright: updated year and license information
+
+ -- Peter Collingbourne <peter@pcc.me.uk>  Wed, 10 Feb 2010 22:35:17 +0000
+
+dot2tex (2.8.6-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/control: new Standards-Version
+  * debian/dot2tex.1: documented the --pgf118 option
+  * debian/dot2tex.1: fixed typo
+  * debian/dot2tex.1: documented the mechanism for automatic conversion
+    of dot files to xdot format
+
+ -- Peter Collingbourne <peter@pcc.me.uk>  Wed, 29 Jul 2009 21:37:05 -0700
+
+dot2tex (2.8.5-1) unstable; urgency=low
+
+  [ Sandro Tosi ]
+  * debian/control
+    - switch Vcs-Browser field to viewsvn
+
+  [ Marco Rodrigues ]
+  * debian/control:
+    + Add ${misc:Depends} to Depends to remove
+      lintian warning.
+
+  [ Peter Collingbourne ]
+  * New upstream release
+  * debian/control: new Standards-Version
+  * debian/control: generated files now require pgf >= 2.00
+  * debian/copyright: changed year to 2009
+  * debian/control, debian/copyright, debian/dot2tex.1: changed
+    maintainer email address (again)
+  * debian/copyright: refer specifically to GPL-2
+  * debian/copyright: use the word Copyright to correctly express
+    copyright ownership
+
+ -- Peter Collingbourne <peter@pcc.me.uk>  Sun, 15 Mar 2009 16:23:06 +0000
+
+dot2tex (2.8.4-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/dot2tex.1: documented --cache option
+  * debian/control: changed maintainer email address
+
+ -- Peter Collingbourne <peter@peter.uk.to>  Mon, 29 Sep 2008 00:58:56 +0100
+
+dot2tex (2.8.2-1) unstable; urgency=low
+
+  [ Peter Collingbourne ]
+  * New upstream release
+  * debian/patches/01-shebang.patch: removed, applied upstream
+  * debian/rules: simple-patchsys removed, no longer required
+  * debian/control
+    - updated Standards-Version
+    - removed references to tetex
+    - removed unnecessary ~ in python version number
+
+  [ Piotr Ożarowski ]
+  * Added DM-Upload-Allowed: yes
+
+ -- Peter Collingbourne <pcc03@doc.ic.ac.uk>  Thu, 12 Jun 2008 14:04:56 +0100
+
+dot2tex (2.8.1-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/control:
+    - replaced dependency on pydot with pyparsing and graphviz
+    - replaced python-all-dev Build-Dep with python
+    - moved Build-Depends on pyparsing to Build-Depends-Indep
+  * debian/copyright: added 2008 to upstream copyright
+  * debian/watch: escaped the dots
+  * debian/pyversions, debian/control: package now works with only
+    Python 2.4+
+
+ -- Peter Collingbourne <pcc03@doc.ic.ac.uk>  Mon, 26 May 2008 15:32:30 +0100
+
+dot2tex (2.7.0-1) unstable; urgency=low
+
+  * New upstream release
+  * dot2tex/dot2tex.py: backed out all changes apart from shebang as
+    taken upstream
+  * debian/dot2tex.1: documented new command line option --codeonly
+  * debian/rules: moved patching system to CDBS simple-patchsys
+  * debian/control: updated Standards-Version
+  * debian/control: added Uploaders, Vcs-Svn, Vcs-Browser fields for
+    PAPT
+  * debian/copyright: changed year to 2008
+
+ -- Peter Collingbourne <pcc03@doc.ic.ac.uk>  Wed, 16 Jan 2008 01:31:30 +0000
+
+dot2tex (2.6.1-1) unstable; urgency=low
+
+  * New upstream release
+  * dot2tex/dot2tex: removed shebang (added upstream)
+
+ -- Peter Collingbourne <pcc03@doc.ic.ac.uk>  Tue, 13 Nov 2007 16:04:10 +0000
+
+dot2tex (2.6.0-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/copyright: changed years to 2007
+  * debian/dot2tex.1: documented new command line options
+  * debian/README.Debian: removed as upstream now calls the script
+    dot2tex
+  * debian/rules: no longer rename script as upstream now calls it
+    dot2tex
+  * dot2tex/dot2tex: added shebang
+  * dot2tex/dot2tex.py: removed shebang
+
+ -- Peter Collingbourne <pcc03@doc.ic.ac.uk>  Fri, 05 Oct 2007 16:41:28 +0100
+
+dot2tex (2.5.0-1) unstable; urgency=low
+
+  * New upstream release (closes: #427034)
+  * Added Recommends: preview-latex-style (for --preproc flag)
+  * dot2tex/dot2tex.py: error messages make reference to Debian
+    packages and filenames
+  * debian/watch: new download location
+
+ -- Peter Collingbourne <pcc03@doc.ic.ac.uk>  Tue, 17 Jul 2007 15:20:20 +0100
+
+dot2tex (2.0.3-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Peter Collingbourne <pcc03@doc.ic.ac.uk>  Fri, 01 Jun 2007 15:51:56 +0100
+
+dot2tex (2.0.1-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Peter Collingbourne <pcc03@doc.ic.ac.uk>  Wed, 09 May 2007 16:00:56 +0100
+
+dot2tex (1.5.1-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Peter Collingbourne <pcc03@doc.ic.ac.uk>  Tue, 20 Mar 2007 01:54:53 +0000
+
+dot2tex (1.5.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #398092)
+  * Wrote manpage
+  * Renamed dot2tex.py to dot2tex
+
+ -- Peter Collingbourne <pcc03@doc.ic.ac.uk>  Tue,  5 Dec 2006 10:24:24 +0000
